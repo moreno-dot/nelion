@@ -10,18 +10,33 @@ export function NotebookPage({
   truth,
 }: NotebookPageProps) {
   return (
-    <article className="rounded-3xl bg-[#efe0c2] p-8 text-[#281e13] shadow-2xl">
-      <h2 className="mb-6 text-4xl font-bold">{title}</h2>
+    <article className="relative overflow-hidden rounded-[2rem] border border-[#ceb98c] bg-[linear-gradient(180deg,rgba(248,238,214,0.98),rgba(236,219,186,0.98))] p-8 text-[#2f2418] shadow-[inset_0_1px_0_rgba(255,250,236,0.85),0_30px_70px_rgba(28,18,8,0.18)] sm:p-10">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-y-0 left-6 w-px bg-[#b99d67]/35"
+      />
 
-      <p className="whitespace-pre-line text-xl leading-9">
-        {body}
-      </p>
+      <div className="relative space-y-8 pl-4 sm:pl-6">
+        <header className="space-y-4">
+          <p className="text-xs uppercase tracking-[0.32em] text-[#7c6440]">
+            Quiet Reading
+          </p>
 
-      <hr className="my-8" />
+          <h2 className="font-serif text-3xl leading-tight font-semibold sm:text-4xl">
+            {title}
+          </h2>
+        </header>
 
-      <blockquote className="border-l-4 border-[#6f8755] pl-4 italic">
-        {truth}
-      </blockquote>
+        <p className="whitespace-pre-line text-lg leading-9 text-[#3a2d1e] sm:text-[1.2rem]">
+          {body}
+        </p>
+
+        <hr className="border-[#b99d67]/45" />
+
+        <blockquote className="border-l-2 border-[#8a7350] pl-5 text-base leading-8 italic text-[#5d4a35] sm:text-lg">
+          {truth}
+        </blockquote>
+      </div>
     </article>
   );
 }
